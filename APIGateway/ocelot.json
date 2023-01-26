@@ -16,7 +16,11 @@
         "Period": "10s",
         "PeriodTimespan": 10,
         "Limit": 3
-      }
+      },
+      "FileCacheOptions": {
+        "TtlSeconds": 10
+      },
+      "Priority": 0
     },
     {
       "DownstreamPathTemplate": "/api/{path}",
@@ -40,7 +44,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/innergate/{path}",
-      "UpstreamHttpMethod": [ "Get" ]
+      "UpstreamHttpMethod": [ "Get" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "bearer-token",
+        "AllowedScopes": []
+      }
     }
   ],
   "GlobalConfiguration": {
